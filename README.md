@@ -1,2 +1,26 @@
-# text-reader-releases
-Windows installers and signed automatic updates for Text Reader. Source is private.
+# Text Reader
+
+텍스트를 붙여넣고 개인 TTS 서버로 읽는 Windows 데스크톱 앱입니다. 이 저장소에는 설치 파일과 자동 업데이트 파일만 제공합니다. 소스 코드는 별도 비공개 저장소에서 관리합니다.
+
+## 설치
+
+1. [최신 릴리스](https://github.com/HanChangHun/text-reader-releases/releases/latest)에서 `TextReader-버전-windows-x64-setup.exe`를 내려받습니다.
+2. 설치 파일을 실행하고 시작 메뉴에서 Text Reader를 엽니다.
+3. 설정에서 본인의 TTS API URL과 음성을 저장한 뒤 텍스트를 붙여넣고 **읽기**를 누릅니다.
+
+Windows 10/11 x64와 WebView2 Runtime이 필요합니다. 현재 사용자에게 설치하며 TTS 서버와 개인 API 설정은 포함하지 않습니다. 기존 v0.1.x 포터블 앱을 사용했다면 먼저 닫고 설치 파일을 한 번 실행합니다. 기존 설정은 유지됩니다.
+
+## 업데이트
+
+앱을 시작할 때와 매일 새 버전을 확인합니다. 설정 버튼에 업데이트 표시가 생기면 설정의 **업데이트 설치**를 누릅니다. 다운로드한 파일의 서명을 검증한 뒤 설치하고 다시 시작합니다. 입력한 본문은 복원되며 재생은 중지됩니다.
+
+업데이트 서명 검증과 Windows Authenticode 코드 서명은 다르며 Authenticode는 적용하지 않았습니다.
+
+## 기능
+
+- 최소 280×240 크기의 작은 창과 항상 위에 고정
+- 음성·속도·음조·스타일 설정
+- 본문 글꼴과 크기 조절
+- 재생 위치·음량·재생 속도 조절과 MP3 저장
+
+설정은 `%APPDATA%\TextReader\settings.json`에 저장됩니다. 본문은 설정한 TTS 서버로 전송되며, 업데이트 확인에는 본문이나 API 설정을 보내지 않습니다.
